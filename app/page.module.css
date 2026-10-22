@@ -4,7 +4,7 @@
   align-items: center;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 40px 100px 0;
+  padding: 40px var(--page-padding) 0;
 }
 
 .title {
@@ -17,13 +17,13 @@
 .main {
   max-width: 1440px;
   margin: 0 auto;
-  padding: 70px 100px;
+  padding: 70px var(--page-padding);
 }
 
 .list {
   display: grid;
-  /* 3 colonnes sur grand écran ; auto-fill s'adapte aux écrans d'ordinateur plus étroits */
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  /* 3 colonnes comme la maquette, sur toutes les tailles d'écran d'ordinateur */
+  grid-template-columns: repeat(3, 1fr);
   row-gap: 70px;
   column-gap: 40px;
   margin: 0;

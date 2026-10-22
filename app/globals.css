@@ -8,6 +8,9 @@
   --color-background-light: #fafafa; /* bandeau du photographe */
   --color-white: #ffffff;
   --color-black: #000000;
+
+  /* Marge latérale des pages : 100px sur un écran de 1440px, jamais moins de 30px */
+  --page-padding: clamp(30px, 7vw, 100px);
 }
 
 *,
