@@ -1,0 +1,15 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  letter-spacing: -0.02em;
+}
+
+.camera {
+  font-size: 2.1rem;
+  margin: 0 0.05em;
+  transform: translateY(-0.08em);
+}

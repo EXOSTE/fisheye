@@ -1,0 +1,69 @@
+.lightbox {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: var(--color-white);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  /* Une ligne qui occupe toute la hauteur : sans elle, la figure en height: 100% s'écrase à 0 */
+  grid-template-rows: minmax(0, 1fr);
+  align-items: center;
+  gap: 30px;
+  height: 100%;
+  padding: 40px 60px;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  margin: 0;
+}
+
+.mediaFrame {
+  position: relative; /* nécessaire pour l'Image en mode "fill" */
+  flex: 1;
+  min-height: 0;
+}
+
+.media {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.title {
+  margin-top: 12px;
+  font-size: 1.5rem;
+  color: var(--color-primary);
+}
+
+.navButton,
+.closeButton {
+  display: flex;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  background: none;
+  font-size: 3rem;
+  color: var(--color-primary);
+}
+
+.navButton:hover,
+.closeButton:hover {
+  background-color: var(--color-background-light);
+}
+
+.closeButton {
+  position: absolute;
+  top: 40px;
+  right: 40px;
+  font-size: 2.5rem;
+}

@@ -1,0 +1,18 @@
+/* Bouton principal de la maquette (« Contactez-moi », « Envoyer ») */
+.primary {
+  min-width: 170px;
+  padding: 22px 16px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+/* Guide d'accessibilité : fond clair + texte noir au survol et au focus */
+.primary:hover,
+.primary:focus-visible {
+  color: var(--color-black);
+  background-color: var(--color-secondary-light);
+}

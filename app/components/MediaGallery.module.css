@@ -1,0 +1,30 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px 95px;
+  margin: 30px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Encart fixe en bas à droite de l'écran */
+.summary {
+  position: fixed;
+  right: 36px;
+  bottom: 0;
+  z-index: 1;
+  display: flex;
+  gap: 60px;
+  padding: 20px 30px;
+  border-radius: 5px 5px 0 0;
+  background-color: var(--color-secondary-light);
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.summary p {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 0;
+}
