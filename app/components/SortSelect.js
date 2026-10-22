@@ -98,7 +98,8 @@ export default function SortSelect({ value, onChange }) {
           className={styles.button}
           aria-haspopup="listbox"
           aria-expanded={isOpen}
-          aria-controls="sort-listbox"
+          // La liste n'existe dans le DOM que lorsqu'elle est ouverte
+          aria-controls={isOpen ? 'sort-listbox' : undefined}
           // Le nom lu sera « Trier par Popularité »
           aria-labelledby="sort-label sort-button"
           onClick={() => (isOpen ? closeList({ returnFocus: false }) : openList())}

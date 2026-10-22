@@ -28,3 +28,9 @@
   gap: 6px;
   margin: 0;
 }
+
+.error {
+  margin: 20px 0 0;
+  font-weight: 700;
+  color: var(--color-primary);
+}

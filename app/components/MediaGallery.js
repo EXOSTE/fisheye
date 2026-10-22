@@ -25,6 +25,8 @@ export default function MediaGallery({ initialMedias, photographerName, price })
   const [sortBy, setSortBy] = useState(SORT_OPTIONS[0].value);
   // Index (dans la liste triée) du média affiché dans la lightbox, null si elle est fermée
   const [lightboxIndex, setLightboxIndex] = useState(null);
+  // Message affiché si l'enregistrement d'un like échoue
+  const [likeError, setLikeError] = useState(null);
 
   // sort() modifie le tableau d'origine : on trie donc une copie
   const sortedMedias = [...medias].sort(COMPARE_FUNCTIONS[sortBy]);
@@ -44,12 +46,14 @@ export default function MediaGallery({ initialMedias, photographerName, price })
   async function handleLike(mediaId) {
     // Mise à jour « optimiste » : l'affichage change tout de suite, sans attendre le serveur
     changeLikes(mediaId, 1);
+    setLikeError(null);
     try {
       await incrementMediaLikes(mediaId);
     } catch (error) {
       // En cas d'échec de l'enregistrement en BDD, on annule le like affiché
       console.error(error);
       changeLikes(mediaId, -1);
+      setLikeError("Votre like n'a pas pu être enregistré. Veuillez réessayer.");
     }
   }
 
@@ -69,6 +73,12 @@ export default function MediaGallery({ initialMedias, photographerName, price })
           Réalisations de {photographerName}
         </h2>
         <SortSelect value={sortBy} onChange={setSortBy} />
+        {/* role="alert" : le message est lu immédiatement par les lecteurs d'écran */}
+        {likeError && (
+          <p role="alert" className={styles.error}>
+            {likeError}
+          </p>
+        )}
         <ul className={styles.grid}>
           {sortedMedias.map((media, index) => (
             <li key={media.id}>
